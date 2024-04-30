@@ -130,7 +130,7 @@ def upload():
 @app.route('/prepare', methods=['GET'])
 def prepare_dataset():
     images = []
-    d = ["I","N","U"]
+    d = ["C","H","P","U"]
     digits = []
     for digit in d:
       filelist = glob.glob('{}/*.png'.format(digit))
@@ -153,7 +153,7 @@ def download_y():
     return send_file('./y.npy')
 
 if __name__ == "__main__":
-    digits = ['U', 'N', 'I']
+    digits = ['U', 'P', 'C', 'H']
     for d in digits:
         if not os.path.exists(str(d)):
             os.mkdir(str(d))
